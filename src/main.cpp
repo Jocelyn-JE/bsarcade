@@ -15,7 +15,7 @@ int main(void) {
     const char *libs[] = {"./lib/foo.so", "./lib/bar.so", "./lib/baz.so"};
 
     for (int i = 0; i < 3; i++) {
-        class DLLoader<IDisplayModule> displayLib(libs[i]);
+        DLLoader<IDisplayModule> displayLib(libs[i]);
         std::unique_ptr<IDisplayModule> &module = displayLib.getInstance();
 
         module->init();
